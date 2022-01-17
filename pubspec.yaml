@@ -24,12 +24,13 @@ flutter:
   assets:
     - res/images/
   fonts:
-    -family: Roboto
-      - asset: res/fonts/Roboto-Bold.ttf
-      - asset: res/fonts/Roboto-Italic.ttf
-      - asset: res/fonts/Roboto-Light.ttf
-      - asset: res/fonts/Roboto-Medium.ttf
-      - asset: res/fonts/Roboto-Regular.ttf
+    - family: Roboto
+      fonts:
+        - asset: res/fonts/Roboto-Regular.ttf
+        - asset: res/fonts/Roboto-Bold.ttf
+        - asset: res/fonts/Roboto-Italic.ttf
+        - asset: res/fonts/Roboto-Light.ttf
+        - asset: res/fonts/Roboto-Medium.ttf
   uses-material-design: true
 
 
