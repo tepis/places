@@ -18,11 +18,16 @@ class _SightListScreenState extends State<SightListScreen> {
         centerTitle: false,
         title: Container(
           padding: EdgeInsets.fromLTRB(16, 40, 16, 322),
-            child: Text('Список\nинтересных мест',
-                style: TextStyle(
-                    color: Color(0xFF252849),
-                    fontSize: 32,
-                    fontFamily: 'Roboto', fontWeight: FontWeight.bold),),),
+          child: Text(
+            'Список\nинтересных мест',
+            style: TextStyle(
+                color: Color(0xFF252849),
+                fontSize: 32,
+                fontFamily: 'Roboto',
+                fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
       ),
     );
   }
