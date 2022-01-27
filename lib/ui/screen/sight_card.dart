@@ -50,6 +50,7 @@ class SightCard extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox (height: 15,),
           Container(
             width: double.infinity,
             padding: EdgeInsets.all(16),
