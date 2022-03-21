@@ -7,8 +7,7 @@ class SightCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 3 / 2,
+    return Container(
       child: Column(
         children: [
           Stack(
@@ -16,11 +15,31 @@ class SightCard extends StatelessWidget {
               Container(
                 width: double.infinity,
                 height: 96,
-                decoration: const BoxDecoration(
-                  color: Colors.grey,
-                  borderRadius: BorderRadius.only(
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(16.0),
                     topRight: Radius.circular(16.0),
+                  ),
+                  child: Image.network(
+                    sight.url,
+                    loadingBuilder: (
+                      BuildContext context,
+                      Widget child,
+                      ImageChunkEvent? loadingProgress,
+                    ) {
+                      if (loadingProgress == null) {
+                        return child;
+                      }
+                      return Center(
+                        child: CircularProgressIndicator(
+                          value: loadingProgress.expectedTotalBytes != null
+                              ? loadingProgress.cumulativeBytesLoaded /
+                                  loadingProgress.expectedTotalBytes!
+                              : null,
+                        ),
+                      );
+                    },
+                    fit: BoxFit.fitWidth,
                   ),
                 ),
               ),
@@ -50,7 +69,6 @@ class SightCard extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox (height: 15,),
           Container(
             width: double.infinity,
             padding: EdgeInsets.all(16),
@@ -84,14 +102,16 @@ class SightCard extends StatelessWidget {
                     textAlign: TextAlign.left,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
-                        fontSize: 14,
-                        color: Color(0xff3B3E5B),
-                        fontFamily: 'Roboto',),
+                      fontSize: 14,
+                      color: Color(0xff3B3E5B),
+                      fontFamily: 'Roboto',
+                    ),
                   ),
                 ),
               ],
             ),
           ),
+          SizedBox(height: 16),
         ],
       ),
     );

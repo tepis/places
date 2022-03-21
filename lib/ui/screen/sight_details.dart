@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:places/domain/app_string.dart';
 import 'package:places/domain/sight.dart';
 
 class SightCardDetail extends StatelessWidget {
-  const SightCardDetail({Key? key}) : super(key: key);
+  final Sight sight;
+  const SightCardDetail(this.sight, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -46,22 +48,22 @@ class SightCardDetail extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Пряности и радости',
+            Text(
+              sight.name,
               style: TextStyle(
                 fontSize: 24,
                 fontFamily: 'Roboto',
                 color: Color(0xff3B3E5B),
                 fontWeight: FontWeight.w700,
               ),
-              maxLines: 1,
+              maxLines: 2,
               overflow: TextOverflow.ellipsis,
             ),
             SizedBox(height: 2.0),
             Row(
-              children: const [
+              children: [
                 Text(
-                  'sight.type',
+                  sight.type,
                   style: TextStyle(
                     fontSize: 14,
                     fontFamily: 'Roboto',
@@ -81,7 +83,7 @@ class SightCardDetail extends StatelessWidget {
             ),
             SizedBox(height: 24.0),
             Text(
-              'Пряный вкус радостной жизни вместе с шеф-поваром Изо Дзандзава, благодаря которой у гостей ресторана есть возможность выбирать из двух направлений: европейского и восточного',
+              sight.details,
               style: TextStyle(
                 fontFamily: 'Roboto',
                 fontSize: 14,
@@ -98,11 +100,13 @@ class SightCardDetail extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12.0),
                   color: Colors.green,
                 ),
-                child: Center(
-                  child: Text(
-                    'построить маршрут'.toUpperCase(),
-                    style: TextStyle(color: Colors.white),
-                  ),
+                child: Row(
+                  children: [
+                    Text(
+                      AppStrings.appNavigate.toUpperCase(),
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -123,7 +127,7 @@ class SightCardDetail extends StatelessWidget {
                         color: Colors.grey,
                       ),
                       SizedBox(width: 8.0),
-                      Text('Запланировать'),
+                      Text(AppStrings.appBooking),
                     ],
                   ),
                 ),
@@ -136,12 +140,14 @@ class SightCardDetail extends StatelessWidget {
                         color: Colors.grey,
                       ),
                       SizedBox(width: 8.0),
-                      Text('В избранное',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontFamily: "Roboto",
-                        color: Color(0xff3B3E5B),
-                      ),),
+                      Text(
+                        AppStrings.appFavorite,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontFamily: "Roboto",
+                          color: Color(0xff3B3E5B),
+                        ),
+                      ),
                     ],
                   ),
                 ),

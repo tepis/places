@@ -24,6 +24,7 @@ dev_dependencies:
 flutter:
   assets:
     - res/images/
+    - res/svg/
   fonts:
     - family: Roboto
       fonts:
