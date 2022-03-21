@@ -1,6 +1,10 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:places/domain/app_string.dart';
+import 'package:places/res/assets.dart';
 import 'package:places/domain/sight.dart';
+import 'package:flutter_svg/svg.dart';
 
 class SightCardDetail extends StatelessWidget {
   final Sight sight;
@@ -11,32 +15,34 @@ class SightCardDetail extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size(double.infinity, 360),
-        child: Container(
-          decoration: const BoxDecoration(
-            color: Colors.grey,
-          ),
-          child: Stack(
-            children: [
-              Positioned(
-                top: 46,
-                left: 16,
-                child: Container(
-                  width: 32,
-                  height: 32,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    color: Colors.white,
+        child: Stack(
+          children: [
+            Container(
+              child: Image.network(
+                  sight.url,
+                fit: BoxFit.cover,
+                height: 460,
+              ),
+            ),
+            Positioned(
+              top: 46,
+              left: 16,
+              child: Container(
+                width: 32,
+                height: 32,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: Colors.white,
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.only(
+                    left: 4,
                   ),
-                  child: const Padding(
-                    padding: EdgeInsets.only(
-                      left: 4,
-                    ),
-                    child: Icon(Icons.arrow_back_ios, size: 14.0),
-                  ),
+                  child: Icon(Icons.arrow_back_ios, size: 14.0),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
       body: Container(
@@ -71,8 +77,7 @@ class SightCardDetail extends StatelessWidget {
                   ),
                 ),
                 SizedBox(width: 16.0),
-                Text(
-                  'закрыто до 9:00',
+                Text(AppStrings.appWorkTime,
                   style: TextStyle(
                     fontSize: 14,
                     fontFamily: 'Roboto',
@@ -101,7 +106,12 @@ class SightCardDetail extends StatelessWidget {
                   color: Colors.green,
                 ),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    SvgPicture.asset('res/svg/Union.svg'),
+                    SizedBox(
+                      width: 10,
+                    ),
                     Text(
                       AppStrings.appNavigate.toUpperCase(),
                       style: TextStyle(color: Colors.white),
