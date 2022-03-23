@@ -16,7 +16,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SightListScreen(),
+      home: SightCardDetail(mocks[0]),
       title: 'Places',
     );
   }
