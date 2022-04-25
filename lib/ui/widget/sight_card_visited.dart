@@ -94,7 +94,7 @@ class SightCardVisited extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              Text(
+              const Text(
                 AppStrings.targetDone,
                 style: TextStyle(
                   color: Color(0xff3B3E5B),
