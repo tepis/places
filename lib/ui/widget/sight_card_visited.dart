@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:places/domain/app_string.dart';
 import 'package:places/domain/sight.dart';
 
-class SightCard extends StatelessWidget {
+class SightCardVisited extends StatelessWidget {
   final Sight sight;
-  const SightCard(this.sight, {Key? key}) : super(key: key);
+  const SightCardVisited(this.sight, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +31,7 @@ class SightCard extends StatelessWidget {
                     if (loadingProgress == null) {
                       return child;
                     }
+
                     return Center(
                       child: CircularProgressIndicator(
                         value: loadingProgress.expectedTotalBytes != null
@@ -59,7 +61,12 @@ class SightCard extends StatelessWidget {
             Positioned(
               top: 19,
               right: 19,
-              child: SvgPicture.asset('res/svg/Heart.svg'),
+              child: SvgPicture.asset('res/svg/Close.svg'),
+            ),
+            Positioned(
+              top: 19,
+              right: 55,
+              child: SvgPicture.asset('res/svg/Share.svg'),
             ),
           ],
         ),
@@ -87,15 +94,23 @@ class SightCard extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 ),
               ),
+              Text(
+                AppStrings.targetDone,
+                style: TextStyle(
+                  color: Color(0xff3B3E5B),
+                  fontSize: 14,
+                  fontFamily: 'Roboto',
+                ),
+              ),
               Container(
-                margin: const EdgeInsets.only(top: 2),
+                margin: const EdgeInsets.only(top: 11),
                 width: double.infinity,
                 height: 18,
-                child: Text(
-                  sight.details,
-                  textAlign: TextAlign.left,
+                child: const Text(
+                  AppStrings.appWorkTime,
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
                     fontSize: 14,
                     color: Color(0xff3B3E5B),
                     fontFamily: 'Roboto',
@@ -105,7 +120,6 @@ class SightCard extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(height: 16),
       ],
     );
   }
