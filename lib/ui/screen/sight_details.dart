@@ -1,10 +1,7 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:places/domain/app_string.dart';
-import 'package:places/res/assets.dart';
-import 'package:places/domain/sight.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:places/domain/app_string.dart';
+import 'package:places/domain/sight.dart';
 
 class SightCardDetail extends StatelessWidget {
   final Sight sight;
@@ -56,7 +53,7 @@ class SightCardDetail extends StatelessWidget {
           children: [
             Text(
               sight.name,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 24,
                 fontFamily: 'Roboto',
                 color: Color(0xff3B3E5B),
@@ -65,19 +62,19 @@ class SightCardDetail extends StatelessWidget {
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
             ),
-            SizedBox(height: 2.0),
+            const SizedBox(height: 2.0),
             Row(
               children: [
                 Text(
                   sight.type,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 14,
                     fontFamily: 'Roboto',
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-                SizedBox(width: 16.0),
-                Text(AppStrings.appWorkTime,
+                const SizedBox(width: 16.0),
+                const Text(AppStrings.appWorkTime,
                   style: TextStyle(
                     fontSize: 14,
                     fontFamily: 'Roboto',
@@ -86,17 +83,17 @@ class SightCardDetail extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 24.0),
+            const SizedBox(height: 24.0),
             Text(
               sight.details,
-              style: TextStyle(
+              style: const TextStyle(
                 fontFamily: 'Roboto',
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
                 height: 1.2,
               ),
             ),
-            SizedBox(height: 24.0),
+            const SizedBox(height: 24.0),
             Center(
               child: Container(
                 height: 48,
@@ -109,12 +106,12 @@ class SightCardDetail extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SvgPicture.asset('res/svg/Union.svg'),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Text(
                       AppStrings.appNavigate.toUpperCase(),
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     ),
                   ],
                 ),
@@ -131,7 +128,7 @@ class SightCardDetail extends StatelessWidget {
                 Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                    children: const [
                       Icon(
                         Icons.calendar_today,
                         color: Colors.grey,
@@ -144,7 +141,7 @@ class SightCardDetail extends StatelessWidget {
                 Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                    children: const [
                       Icon(
                         Icons.favorite,
                         color: Colors.grey,
@@ -154,7 +151,7 @@ class SightCardDetail extends StatelessWidget {
                         AppStrings.appFavorite,
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
-                          fontFamily: "Roboto",
+                          fontFamily: 'Roboto',
                           color: Color(0xff3B3E5B),
                         ),
                       ),
