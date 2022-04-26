@@ -22,14 +22,14 @@ final List<Sight> mocks = [
       url: 'https://stv24.tv/wp-content/uploads/2020/06/14/stav-golosovanie-sreda-komsozero-1050x700.jpg',
       details: 'Удивительное Озеро любви в Архызе поселилось на плато Морг-Сырты',
       type: 'озеро',),
-    Sight(
+  Sight(
         name: 'Озеро Любви',
         lat: 43.536667,
         lon: 41.338056,
         url: 'https://stv24.tv/wp-content/uploads/2020/06/14/stav-golosovanie-sreda-komsozero-1050x700.jpg',
         details: 'Удивительное Озеро любви в Архызе поселилось на плато Морг-Сырты',
         type: 'озеро',),
-    Sight(
+  Sight(
         name: 'Озеро Любви',
         lat: 43.536667,
         lon: 41.338056,
