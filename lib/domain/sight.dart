@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Sight {
   final String name;
   final double lat;

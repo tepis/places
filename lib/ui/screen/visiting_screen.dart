@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/app_string.dart';
+import 'package:places/domain/app_typography.dart';
 import 'package:places/ui/widget/bottom_navigation_bar.dart';
 import 'package:places/ui/widget/visited_body.dart';
 import 'package:places/ui/widget/want_visited_body.dart';
@@ -17,20 +18,14 @@ class VisitingScreen extends StatelessWidget {
     return DefaultTabController(
       length: _tabs.length,
       child: Scaffold(
-        backgroundColor: Colors.white,
         appBar: AppBar(
+          backgroundColor: Colors.transparent,
           title: const Text(
             AppStrings.favorite,
-            style: TextStyle(
-              color: Color(0xFF252849),
-              fontFamily: 'Roboto',
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
-            ),
+            style: textText18Regular,
           ),
           centerTitle: true,
           elevation: 0,
-          backgroundColor: Colors.white,
           bottom: PreferredSize(
             preferredSize: const Size(double.infinity, 52),
             child: Container(
@@ -40,12 +35,11 @@ class VisitingScreen extends StatelessWidget {
                 color: const Color(0xfff5f5f5),
               ),
               child: TabBar(
-                indicator: BoxDecoration(
-                  color: const Color(0xFF3B3E5B),
-                  borderRadius: BorderRadius.circular(40),
-                ),
-                labelColor: Colors.white,
-                unselectedLabelColor: const Color(0xFF7C7E92),
+                unselectedLabelStyle:
+                    Theme.of(context).tabBarTheme.unselectedLabelStyle,
+                unselectedLabelColor:
+                    Theme.of(context).tabBarTheme.unselectedLabelColor,
+                labelColor: Theme.of(context).tabBarTheme.labelColor,
                 tabs: List<Tab>.from(
                   _tabs.map((t) => Tab(child: Text(t))).toList(),
                 ),
