@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:places/domain/app_colors.dart';
 import 'package:places/domain/app_string.dart';
+import 'package:places/domain/app_typography.dart';
 import 'package:places/domain/sight.dart';
 
 class SightCardDetail extends StatelessWidget {
@@ -14,12 +16,10 @@ class SightCardDetail extends StatelessWidget {
         preferredSize: const Size(double.infinity, 360),
         child: Stack(
           children: [
-            Container(
-              child: Image.network(
-                  sight.url,
-                fit: BoxFit.cover,
-                height: 460,
-              ),
+            Image.network(
+              sight.url,
+              fit: BoxFit.cover,
+              height: 460,
             ),
             Positioned(
               top: 46,
@@ -53,11 +53,8 @@ class SightCardDetail extends StatelessWidget {
           children: [
             Text(
               sight.name,
-              style: const TextStyle(
-                fontSize: 24,
-                fontFamily: 'Roboto',
-                color: Color(0xff3B3E5B),
-                fontWeight: FontWeight.w700,
+              style: textText24Bold.copyWith(
+                color: Theme.of(context).primaryColor,
               ),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
@@ -67,18 +64,15 @@ class SightCardDetail extends StatelessWidget {
               children: [
                 Text(
                   sight.type,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    fontFamily: 'Roboto',
-                    fontWeight: FontWeight.w700,
+                  style: textText14Bold.copyWith(
+                    color: ligthGrey,
                   ),
                 ),
                 const SizedBox(width: 16.0),
-                const Text(AppStrings.appWorkTime,
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontFamily: 'Roboto',
-                    fontWeight: FontWeight.w400,
+                Text(
+                  AppStrings.appWorkTime,
+                  style: textText14Normal.copyWith(
+                    color: ligthGrey,
                   ),
                 ),
               ],
@@ -86,10 +80,8 @@ class SightCardDetail extends StatelessWidget {
             const SizedBox(height: 24.0),
             Text(
               sight.details,
-              style: const TextStyle(
-                fontFamily: 'Roboto',
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
+              style: textText14Normal.copyWith(
+                color: Theme.of(context).primaryColor,
                 height: 1.2,
               ),
             ),
@@ -128,20 +120,25 @@ class SightCardDetail extends StatelessWidget {
                 Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       Icon(
                         Icons.calendar_today,
                         color: Colors.grey,
                       ),
                       SizedBox(width: 8.0),
-                      Text(AppStrings.appBooking),
+                      Text(
+                        AppStrings.appBooking,
+                        style: textText14Normal.copyWith(
+                          color: Theme.of(context).primaryColor,
+                        ),
+                      ),
                     ],
                   ),
                 ),
                 Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       Icon(
                         Icons.favorite,
                         color: Colors.grey,
@@ -149,10 +146,8 @@ class SightCardDetail extends StatelessWidget {
                       SizedBox(width: 8.0),
                       Text(
                         AppStrings.appFavorite,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontFamily: 'Roboto',
-                          color: Color(0xff3B3E5B),
+                        style: textText14Normal.copyWith(
+                          color: Theme.of(context).primaryColor,
                         ),
                       ),
                     ],

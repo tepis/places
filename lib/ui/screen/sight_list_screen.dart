@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/app_string.dart';
+import 'package:places/domain/app_typography.dart';
 import 'package:places/mocks.dart';
 import 'package:places/ui/screen/sight_card.dart';
 
@@ -17,18 +18,13 @@ class _SightListScreenState extends State<SightListScreen> {
       appBar: AppBar(
         elevation: 0,
         toolbarHeight: 120,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         centerTitle: false,
         title: Container(
           padding: const EdgeInsets.fromLTRB(0, 5, 16, 5),
-          child: const Text(
+          child: Text(
             AppStrings.appTitle,
-            style: TextStyle(
-              color: Color(0xFF252849),
-              fontSize: 32,
-              fontFamily: 'Roboto',
-              fontWeight: FontWeight.bold,
-            ),
+            style: textText32Bold.copyWith(color: Theme.of(context).primaryColor),
           ),
         ),
       ),
