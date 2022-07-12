@@ -89,13 +89,13 @@ class SightCardWantVisited extends StatelessWidget {
             children: [
               Text(
                 sight.name,
-                style: textText16Normal.copyWith(
+                style: AppTypography.textText18Regular.copyWith(
                   color: Theme.of(context).primaryColor,
                 ),
               ),
               Text(
                 AppStrings.schedule,
-                style: textText14Normal.copyWith(
+                style: AppTypography.textText14Normal.copyWith(
                   color: greenColor,
                 ),
               ),
@@ -107,7 +107,7 @@ class SightCardWantVisited extends StatelessWidget {
                   AppStrings.appWorkTime,
                   textAlign: TextAlign.left,
                   overflow: TextOverflow.ellipsis,
-                  style: textText14Normal.copyWith(color: Theme.of(context).primaryColor),
+                  style: AppTypography.textText14Normal.copyWith(color: Theme.of(context).primaryColor),
                 ),
               ),
             ],
