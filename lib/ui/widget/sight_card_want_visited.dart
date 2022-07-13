@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:places/domain/app_assets.dart';
 import 'package:places/domain/app_colors.dart';
 import 'package:places/domain/app_string.dart';
 import 'package:places/domain/app_typography.dart';
@@ -63,12 +64,16 @@ class SightCardWantVisited extends StatelessWidget {
             Positioned(
               top: 19,
               right: 19,
-              child: SvgPicture.asset('res/svg/Close.svg'),
+              child: SvgPicture.asset(
+                AppAssets.sightCardCloseIcon,
+              ),
             ),
             Positioned(
               top: 19,
               right: 55,
-              child: SvgPicture.asset('res/svg/Calendar.svg'),
+              child: SvgPicture.asset(
+                AppAssets.sighCardSchedule,
+              ),
             ),
           ],
         ),
@@ -89,25 +94,21 @@ class SightCardWantVisited extends StatelessWidget {
             children: [
               Text(
                 sight.name,
-                style: textText16Normal.copyWith(
-                  color: Theme.of(context).primaryColor,
-                ),
+                style: Theme.of(context).textTheme.subtitle1,
               ),
               Text(
                 AppStrings.schedule,
-                style: textText14Normal.copyWith(
-                  color: greenColor,
-                ),
+                style: Theme.of(context).textTheme.subtitle2,
               ),
               Container(
                 margin: const EdgeInsets.only(top: 11),
                 width: double.infinity,
-                height: 18,
+                height: 16,
                 child: Text(
                   AppStrings.appWorkTime,
                   textAlign: TextAlign.left,
                   overflow: TextOverflow.ellipsis,
-                  style: textText14Normal.copyWith(color: Theme.of(context).primaryColor),
+                  style: Theme.of(context).textTheme.headline5,
                 ),
               ),
             ],
