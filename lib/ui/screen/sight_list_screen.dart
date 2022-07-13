@@ -24,7 +24,7 @@ class _SightListScreenState extends State<SightListScreen> {
           padding: const EdgeInsets.fromLTRB(0, 5, 16, 5),
           child: Text(
             AppStrings.appTitle,
-            style: AppTypography.textText32Bold
+            style: AppTypography.styleText32Bold
                 .copyWith(color: Theme.of(context).primaryColor),
           ),
         ),

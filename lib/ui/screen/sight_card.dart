@@ -83,7 +83,7 @@ class SightCard extends StatelessWidget {
             children: [
               Text(
                 sight.name,
-                style: AppTypography.textText16Normal.copyWith(
+                style: AppTypography.styleText16Normal.copyWith(
                   color: Theme.of(context).primaryColor,
                 ),
               ),
@@ -95,8 +95,8 @@ class SightCard extends StatelessWidget {
                   sight.details,
                   textAlign: TextAlign.left,
                   overflow: TextOverflow.ellipsis,
-                  style: AppTypography.textText14Normal.copyWith(
-                    color: ligthGrey,
+                  style: AppTypography.styleText14Normal.copyWith(
+                    color: AppColors.lmLigthGrey,
                   ),
                 ),
               ),

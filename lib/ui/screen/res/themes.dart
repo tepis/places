@@ -1,78 +1,116 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/app_colors.dart';
+import 'package:places/domain/app_typography.dart';
+import 'package:places/main.dart';
 
-class CustomTheme {
-  static ThemeData get lightTheme {
-    return ThemeData(
-      canvasColor: lmColorwhite,
-      primaryColorDark: lmPrimaryColor2,
-      primaryColor: lmPrimarycolor,
-      primaryColorLight: lmBrightness,
-      scaffoldBackgroundColor: lmColorwhite,
-      highlightColor: lmBrightness,
+class AppTheme {
+  AppTheme();
+
+  static ThemeData buildTheme() {
+    final ThemeData base = ThemeData.light();
+
+    return base.copyWith(
+      canvasColor: AppColors.lmColorWhite,
+      primaryColorDark: AppColors.lmPrimaryColorDark,
+      primaryColor: AppColors.lmPrimaryColor,
+      primaryColorLight: AppColors.lmBrightness,
+      scaffoldBackgroundColor: AppColors.lmColorWhite,
+      highlightColor: AppColors.lmBrightness,
       appBarTheme: const AppBarTheme(
         titleTextStyle: TextStyle(
-          color: lmPrimaryColor2,
+          color: AppColors.lmPrimaryColorDark,
         ),
       ),
       tabBarTheme: TabBarTheme(
         indicator: BoxDecoration(
-          color: lmPrimaryColor2,
+          color: AppColors.lmPrimaryColorDark,
           borderRadius: BorderRadius.circular(40),
         ),
         unselectedLabelColor: const Color(0xFF7C7E92),
         unselectedLabelStyle: const TextStyle(
-          color: Colors.white,
+          color: AppColors.lmColorWhite,
         ),
-        labelColor: lmColorwhite,
+        labelColor: AppColors.lmColorWhite,
       ),
       bottomAppBarTheme: const BottomAppBarTheme(
-        color: lmColorwhite,
+        color: AppColors.lmColorWhite,
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: lmColorwhite,
+        backgroundColor: AppColors.lmColorWhite,
         elevation: 0,
         showSelectedLabels: false,
         showUnselectedLabels: false,
       ),
+      textTheme: TextTheme(
+        headline6: AppTypography.styleText18Regular.copyWith(
+          color: AppColors.lmPrimaryColor,
+        ),
+        headline4: AppTypography.styleText14Bold.copyWith(
+          color: AppColors.lmPrimaryColor,
+        ),
+        headline5: AppTypography.styleText14Normal.copyWith(
+          color: AppColors.lmLigthGrey,
+        ),
+        subtitle1: AppTypography.styleText16Normal.copyWith(
+          color: AppColors.lmPrimaryColor,
+        ),
+        subtitle2: AppTypography.styleText14Normal.copyWith(
+          color: AppColors.lmGreenColor,
+        ),
+      ),
     );
   }
 
-  static ThemeData get darkTheme {
-    return ThemeData(
-      canvasColor: dmPrimaryColor,
+  static ThemeData buildThemeDark() {
+    final ThemeData base = ThemeData.dark();
+
+    return base.copyWith(
+      canvasColor: AppColors.dmPrimaryColor,
       primaryColor: Colors.white,
-      primaryColorLight: dmTabDark,
-      scaffoldBackgroundColor: dmPrimaryColor,
-      primaryColorDark: dmPrimaryColor,
-      cardColor: darkBG,
+      primaryColorLight: AppColors.dmTabDark,
+      scaffoldBackgroundColor: AppColors.dmPrimaryColor,
+      primaryColorDark: AppColors.dmPrimaryColor,
+      cardColor: AppColors.dmDarkBG,
       appBarTheme: const AppBarTheme(
         titleTextStyle: TextStyle(
-          color: lmColorwhite,
+          color: AppColors.lmColorWhite,
         ),
       ),
       tabBarTheme: TabBarTheme(
         indicator: BoxDecoration(
-          color: dmTabDark,
+          color: AppColors.dmTabDark,
           borderRadius: BorderRadius.circular(40),
         ),
         unselectedLabelColor: const Color(0xFF7C7E92),
         unselectedLabelStyle: const TextStyle(
           color: Colors.white,
         ),
-        labelColor: lmColorwhite,
+        labelColor: AppColors.lmColorWhite,
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: dmPrimaryColor,
+        backgroundColor: AppColors.dmPrimaryColor,
         elevation: 0,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.white,
       ),
+      textTheme: TextTheme(
+        headline6: AppTypography.styleText18Regular.copyWith(
+          color: AppColors.dmWhiteColor,
+        ),
+        headline5: AppTypography.styleText14Normal.copyWith(
+          color: AppColors.dmligthGrey,
+        ),
+        subtitle1: AppTypography.styleText16Normal.copyWith(
+          color: AppColors.dmWhiteColor,
+        ),
+        subtitle2: AppTypography.styleText14Normal.copyWith(
+          color: AppColors.dmGreenColor,
+        ),
+      ),
     );
   }
 }
-

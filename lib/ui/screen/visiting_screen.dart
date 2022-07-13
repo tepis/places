@@ -22,7 +22,7 @@ class VisitingScreen extends StatelessWidget {
           backgroundColor: Colors.transparent,
           title: const Text(
             AppStrings.favorite,
-            style: AppTypography.textText18Regular,
+            style: AppTypography.styleText18Regular,
           ),
           centerTitle: true,
           elevation: 0,
