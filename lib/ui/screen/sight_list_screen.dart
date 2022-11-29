@@ -24,17 +24,20 @@ class _SightListScreenState extends State<SightListScreen> {
           padding: const EdgeInsets.fromLTRB(0, 5, 16, 5),
           child: Text(
             AppStrings.appTitle,
-            style: textText32Bold.copyWith(color: Theme.of(context).primaryColor),
+            style: AppTypography.styleText32Bold
+                .copyWith(color: Theme.of(context).primaryColor),
           ),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16,),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 16,
+        ),
         child: ListView.builder(
-        itemCount: mocks.length,
+          itemCount: mocks.length,
           itemBuilder: (context, index) {
-              return SightCard(mocks[index]);
-            },
+            return SightCard(mocks[index]);
+          },
         ),
       ),
     );

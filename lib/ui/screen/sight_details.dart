@@ -53,7 +53,7 @@ class SightCardDetail extends StatelessWidget {
           children: [
             Text(
               sight.name,
-              style: textText24Bold.copyWith(
+              style: AppTypography.styleText24Bold.copyWith(
                 color: Theme.of(context).primaryColor,
               ),
               maxLines: 2,
@@ -64,15 +64,15 @@ class SightCardDetail extends StatelessWidget {
               children: [
                 Text(
                   sight.type,
-                  style: textText14Bold.copyWith(
-                    color: ligthGrey,
+                  style: AppTypography.styleText14Bold.copyWith(
+                    color: AppColors.lmLigthGrey,
                   ),
                 ),
                 const SizedBox(width: 16.0),
                 Text(
                   AppStrings.appWorkTime,
-                  style: textText14Normal.copyWith(
-                    color: ligthGrey,
+                  style: AppTypography.styleText14Normal.copyWith(
+                    color: AppColors.lmLigthGrey,
                   ),
                 ),
               ],
@@ -80,7 +80,7 @@ class SightCardDetail extends StatelessWidget {
             const SizedBox(height: 24.0),
             Text(
               sight.details,
-              style: textText14Normal.copyWith(
+              style: AppTypography.styleText14Normal.copyWith(
                 color: Theme.of(context).primaryColor,
                 height: 1.2,
               ),
@@ -121,14 +121,14 @@ class SightCardDetail extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.calendar_today,
                         color: Colors.grey,
                       ),
-                      SizedBox(width: 8.0),
+                      const SizedBox(width: 8.0),
                       Text(
                         AppStrings.appBooking,
-                        style: textText14Normal.copyWith(
+                        style: AppTypography.styleText14Normal.copyWith(
                           color: Theme.of(context).primaryColor,
                         ),
                       ),
@@ -139,14 +139,14 @@ class SightCardDetail extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.favorite,
                         color: Colors.grey,
                       ),
-                      SizedBox(width: 8.0),
+                      const SizedBox(width: 8.0),
                       Text(
                         AppStrings.appFavorite,
-                        style: textText14Normal.copyWith(
+                        style: AppTypography.styleText14Normal.copyWith(
                           color: Theme.of(context).primaryColor,
                         ),
                       ),
